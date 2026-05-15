@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science & Professional Practice in Psychology — Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0E8;
+    --bg2: #EDE8DC;
+    --paper: #FDFAF4;
+    --ink: #1A1612;
+    --ink2: #4A4540;
+    --ink3: #7A7570;
+    --accent: #C0392B;
+    --accent2: #2C6E49;
+    --accent3: #1A5276;
+    --accent4: #7D3C98;
+    --accent5: #D35400;
+    --gold: #B7950B;
+    --border: #D4CCBB;
+    --exam-bg: #FEF9F0;
+    --exam-border: #E8A000;
+    --summary-bg: #F0F7F4;
+    --summary-border: #2C6E49;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 41px
+    );
+  }
+  .site-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .site-header .subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    position: relative;
+  }
+  .badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* Nav */
+  .toc {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .toc a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink2);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .toc a:hover { background: var(--bg); color: var(--ink); border-color: var(--ink3); }
+
+  /* Main layout */
+  .main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* Module sections */
+  .module {
+    margin-bottom: 4rem;
+    scroll-margin-top: 80px;
+  }
+  .module-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .module-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -4px;
+  }
+  .module-title-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .module-title-block .module-focus {
+    font-size: 0.85rem;
+    color: var(--ink3);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* Content blocks */
+  .content-block { margin-bottom: 1.5rem; }
+
+  p { color: var(--ink2); margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 1.75rem 0 0.75rem;
+  }
+  h3:first-child { margin-top: 0; }
+
+  h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1rem 0 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  ul, ol { padding-left: 1.4rem; color: var(--ink2); margin-bottom: 1rem; }
+  li { margin-bottom: 0.35rem; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Cards */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .card-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--ink3);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Concept pills grid */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+  .concept-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 4px solid;
+  }
+  .concept-item .ci-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+  .concept-item .ci-body {
+    font-size: 0.85rem;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+  .ci-red { border-color: var(--accent); }
+  .ci-green { border-color: var(--accent2); }
+  .ci-blue { border-color: var(--accent3); }
+  .ci-purple { border-color: var(--accent4); }
+  .ci-orange { border-color: var(--accent5); }
+  .ci-gold { border-color: var(--gold); }
+
+  /* Exam callout */
+  .exam-callout {
+    background: var(--exam-bg);
+    border: 1.5px solid var(--exam-border);
+    border-radius: 8px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .exam-callout::before {
+    content: '★ EXAM';
+    position: absolute;
+    top: -11px;
+    left: 14px;
+    background: var(--exam-border);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+  .exam-callout p { color: var(--ink2); margin: 0; font-size: 0.9rem; }
+  .exam-callout ul { font-size: 0.9rem; margin: 0.5rem 0 0; }
+
+  /* Summary box */
+  .summary-box {
+    background: var(--summary-bg);
+    border-left: 4px solid var(--summary-border);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .summary-box .summary-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 0.6rem;
+  }
+  .summary-box p { font-size: 0.9rem; color: var(--ink2); margin-bottom: 0.5rem; }
+  .summary-box p:last-child { margin-bottom: 0; }
+
+  /* Numbered list style for principles */
+  .principle-list { list-style: none; padding: 0; }
+  .principle-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .principle-list li:last-child { border-bottom: none; }
+  .principle-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--border);
+    flex-shrink: 0;
+    width: 28px;
+    line-height: 1.3;
+  }
+  .principle-content strong { display: block; color: var(--ink); font-size: 0.92rem; }
+  .principle-content span { color: var(--ink2); font-size: 0.88rem; }
+
+  /* Endorsement grid */
+  .endorsement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    margin-bottom: 1.25rem;
+  }
+  .endorsement-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+  }
+  .endorsement-card .ec-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+  .endorsement-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0 0 0.4rem;
+    color: var(--ink);
+  }
+  .endorsement-card p { font-size: 0.82rem; color: var(--ink2); line-height: 1.55; margin: 0; }
+
+  .tag-clinical { background: #FDEDEC; color: #922B21; }
+  .tag-counselling { background: #EAF5FB; color: #1A5276; }
+  .tag-neuro { background: #F4ECF7; color: #6C3483; }
+  .tag-forensic { background: #FEF9E7; color: #7D6608; }
+  .tag-org { background: #E9F7EF; color: #1E8449; }
+  .tag-community { background: #FDF2F8; color: #76448A; }
+  .tag-edd { background: #EBF5FB; color: #1A5276; }
+  .tag-sport { background: #FEF5E7; color: #935116; }
+  .tag-health { background: #F0FFF4; color: #1E8449; }
+
+  /* Ethics principles */
+  .ethics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+  }
+  .ethics-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .ethics-item .ei-icon {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+  .ethics-item h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 0.35rem;
+  }
+  .ethics-item p { font-size: 0.82rem; color: var(--ink2); line-height: 1.55; margin: 0; }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* Highlight inline */
+  mark {
+    background: #FEF9C3;
+    color: var(--ink);
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  /* Acculturation table */
+  .berry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  .berry-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+  .berry-item h4 { font-size: 0.88rem; text-transform: none; letter-spacing: 0; color: var(--ink); margin-bottom: 4px; }
+  .berry-item p { font-size: 0.82rem; color: var(--ink2); margin: 0; line-height: 1.5; }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    .toc { padding: 0.75rem 1rem; }
+    .module-header { gap: 0.75rem; }
+    .module-num { font-size: 2rem; }
+    .concept-grid { grid-template-columns: 1fr; }
+    .endorsement-grid { grid-template-columns: 1fr; }
+    .berry-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Science &amp; Professional Practice in Psychology</h1>
+  <p class="subtitle">Complete Study Guide &mdash; Modules 1&ndash;11</p>
+  <div class="badge-row">
+    <span class="badge">11 Modules</span>
+    <span class="badge">Certificate in Psychology</span>
+    <span class="badge">Exam Ready</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#mod1">Module 1: Science</a>
+  <a href="#mod2">Module 2: Empiricism</a>
+  <a href="#mod3">Module 3: Psychomyths</a>
+  <a href="#mod4">Module 4: Registration</a>
+  <a href="#mod5">Module 5: Endorsements I</a>
+  <a href="#mod6">Module 6: Endorsements II</a>
+  <a href="#mod7">Module 7: Endorsements III</a>
+  <a href="#mod8">Module 8: Alt Careers</a>
+  <a href="#mod10">Module 10: Ethics</a>
+  <a href="#mod11">Module 11: Culture</a>
+</nav>
+
+<main class="main">
+
+<!-- ============================================================ MODULE 1 -->
+<section class="module" id="mod1">
+  <div class="module-header">
+    <div class="module-num">01</div>
+    <div class="module-title-block">
+      <h2>Introduction to Science &amp; Psychology</h2>
+      <p class="module-focus">What is science? Critical thinking. The history of psychology's big ideas.</p>
+    </div>
+  </div>
+
+  <h3>What is science?</h3>
+  <p>Science has one goal: to create <strong>reasonable explanations (theories) that describe reality</strong>. The key word is "reasonable" — science doesn't claim to find absolute truth, it claims to get progressively closer to it. Evidence is gathered and evaluated according to <strong>rigid, systematically applied rules</strong>. That's what separates science from opinion.</p>
+
+  <div class="concept-grid">
+    <div class="concept-item ci-red">
+      <div class="ci-title">Scientific theory ≠ a guess</div>
+      <div class="ci-body">In everyday language "theory" means a hunch. In science it means a well-supported explanatory framework. It must describe a large class of observations AND make testable predictions about future ones. One contradicting observation can disprove it (Hawking).</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Evidence-based</div>
+      <div class="ci-body">Scientific theory must be grounded in evidence — not intuition, common sense, media reports, or your neighbour's anecdote. The source of knowledge matters as much as the knowledge itself.</div>
+    </div>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Be able to explain what makes knowledge "scientific." The answer is always three things: it must be <mark>empirical</mark>, <mark>falsifiable</mark>, and <mark>verifiable</mark>. You'll almost certainly need to define or apply these.</p>
+  </div>
+
+  <h3>The 6 principles of critical thinking</h3>
+  <p>Critical thinking is the tool you use to evaluate whether research is trustworthy. Not taking things at face value. These 6 principles give you a structured way to assess any claim:</p>
+
+  <ul class="principle-list">
+    <li>
+      <span class="principle-num">1</span>
+      <div class="principle-content">
+        <strong>Extraordinary claims require extraordinary evidence</strong>
+        <span>The more a claim contradicts established knowledge, the higher the burden of proof. "Alcohol treats depression" needs very strong evidence before you'd act on it.</span>
+      </div>
+    </li>
+    <li>
+      <span class="principle-num">2</span>
+      <div class="principle-content">
+        <strong>Testability (falsifiability)</strong>
+        <span>A claim must be testable — it must be possible to prove it wrong. If there's no conceivable test that could disprove it, it's not science.</span>
+      </div>
+    </li>
+    <li>
+      <span class="principle-num">3</span>
+      <div class="principle-content">
+        <strong>Occam's razor</strong>
+        <span>When two explanations account for the same evidence equally well, prefer the simpler one. Don't add unnecessary complexity.</span>
+      </div>
+    </li>
+    <li>
+      <span class="principle-num">4</span>
+      <div class="principle-content">
+        <strong>Replicability</strong>
+        <span>Results must be reproducible by other researchers in other settings. A one-off finding proves nothing. Be suspicious of "one study found..."</span>
+      </div>
+    </li>
+    <li>
+      <span class="principle-num">5</span>
+      <div class="principle-content">
+        <strong>Ruling out rival hypotheses</strong>
+        <span>Before accepting an explanation, you must consider and eliminate other possible explanations. Good research design does this systematically (e.g., control groups).</span>
+      </div>
+    </li>
+    <li>
+      <span class="principle-num">6</span>
+      <div class="principle-content">
+        <strong>Correlation ≠ causation</strong>
+        <span>Two things happening together doesn't mean one caused the other. Ice cream sales and drowning rates both peak in summer — ice cream doesn't cause drowning.</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know all 6 principles by name and be able to give an example of each. Also know the 5 critical thinking questions below — these sometimes appear as short-answer prompts.</p>
+    <ul>
+      <li>What am I being asked to believe or accept?</li>
+      <li>What evidence is there to support this?</li>
+      <li>Are there alternative ways to interpret the evidence?</li>
+      <li>What additional evidence is needed to evaluate the alternatives?</li>
+      <li>What conclusions are most reliable?</li>
+    </ul>
+  </div>
+
+  <h3>Historical tour — psychology's major schools of thought</h3>
+  <p>Understanding where psychology came from helps you understand why science is so central to it now. The field has progressively moved toward more empirically rigorous approaches:</p>
+
+  <div class="concept-grid">
+    <div class="concept-item ci-gold">
+      <div class="ci-title">Structuralism &amp; Functionalism</div>
+      <div class="ci-body">Early attempts to study the mind. Structuralism focused on the structure of conscious experience; Functionalism on what the mind does and why (influenced by Darwin).</div>
+    </div>
+    <div class="concept-item ci-red">
+      <div class="ci-title">Psychoanalysis (Freud)</div>
+      <div class="ci-body">Unconscious processes drive behaviour. Symptoms are symbolic representations of underlying trauma. Important historically but difficult to test empirically — a key limitation.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Behaviourism</div>
+      <div class="ci-body">Only observable, measurable behaviour counts. Skinner, Thorndike. This was a scientific turning point — it forced psychology to focus on what could actually be measured.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Current approaches</div>
+      <div class="ci-body">Biological, Cognitive, Humanistic, Neuropsychological, Behaviourism. Modern psychology draws on multiple frameworks depending on the presentation and the research question.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 1 Summary</div>
+    <p>The entire unit rests on one idea: <strong>to be an effective psychologist, you must be science-literate.</strong> Module 1 establishes what science is and gives you the critical thinking tools to engage with it. The historical tour shows how psychology evolved toward empirical rigour — and why psychoanalysis, despite its cultural impact, sits awkwardly in that story.</p>
+    <p>Key takeaway: psychology distinguishes scientific evidence from fiction and myths. Your job as a future practitioner is to do the same.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 2 -->
+<section class="module" id="mod2">
+  <div class="module-header">
+    <div class="module-num">02</div>
+    <div class="module-title-block">
+      <h2>Science &amp; Psychology Part 2</h2>
+      <p class="module-focus">Empiricism. Scientific theory. Verifiability. The scientific method. The scientist-practitioner model.</p>
+    </div>
+  </div>
+
+  <h3>Empiricism</h3>
+  <p>Empiricism is the practice of relying on <strong>observation, evidence, and empirical data</strong>. But observation alone isn't sufficient — it must be <strong>systematic</strong>. You need a structured, consistent method of observing, so that what you find reflects reality rather than your own biases or randomness.</p>
+  <p>Psychology became empirical when Skinner and Thorndike ran controlled experiments on observable behaviour. This is also why <strong>operationalising variables</strong> matters — turning fuzzy concepts like "wellbeing" into measurable things. Example: the DASS-42 (Depression, Anxiety &amp; Stress Scale) turns mental health into something measurable on a spectrum from normal to severe.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know what empiricism means and why "systematic" observation matters. Know what operationalising a variable means — and why it's necessary for empirical research. Be able to contrast observable behaviours (easy to operationalise) with psychological constructs (harder).</p>
+  </div>
+
+  <h3>Scientific theory — in more depth</h3>
+  <div class="card">
+    <div class="card-title">Stephen Hawking on scientific theory</div>
+    <p style="font-size:0.9rem; color:var(--ink2); font-style:italic; line-height:1.7">"A theory is a good theory if it satisfies two requirements: It must accurately describe a large class of observations on the basis of a model which contains only a few arbitrary elements, and it must make definite predictions about the results of future observations... you can never prove it. No matter how many times the results of experiments agree with some theory, you can never be sure that the next time the result will not contradict the theory. On the other hand, you can disprove a theory by finding even a single observation which disagrees with the predictions of the theory."</p>
+  </div>
+  <p>This quote captures two crucial points: (1) theories are always provisional — never "proven," just not yet disproven; and (2) falsification works asymmetrically — you can never fully confirm, but you can fully disprove with one contradictory observation.</p>
+
+  <h3>Verifiability</h3>
+  <p>Scientific knowledge must be <strong>publicly verifiable</strong> — made available for criticism, extension, and application by others. It can't just sit in a researcher's desk drawer. As Stanovich (2010) put it: <em>"Knowledge does not exist at all until it has been submitted to the scientific community for criticism and empirical testing by others."</em></p>
+  <p>In practice, this means: peer review → publication → replication. All three are the minimum standard. In 4th year, you may actually experience this — having your raw data checked by a supervisor to ensure nothing has been manipulated.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Be able to explain why verifiability matters. Connect it to practice: before using an intervention with a client, you need to know the results have been replicated across multiple studies. That's how you identify "gold standard" treatments.</p>
+  </div>
+
+  <h3>Why psychoanalysis is a useful example</h3>
+  <p>Freud's theories — unconscious processes, psychosexual stages, free association — are <strong>genuinely difficult to test empirically</strong> and therefore difficult to falsify. This doesn't mean Freud contributed nothing (he brought psychology into popular culture, highlighted childhood trauma, and drew attention to unconscious processes), but it does mean psychoanalytic theories can't be validated as scientific knowledge in the same way that, say, CBT outcomes can.</p>
+
+  <h3>The scientific method</h3>
+  <p>The scientific method is a cyclical process — not a checklist you complete once:</p>
+  <div class="concept-grid">
+    <div class="concept-item ci-purple">
+      <div class="ci-title">Step 1: Propose a theory</div>
+      <div class="ci-body">Based on clinical experience or past literature. This is your starting point.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Step 2: Derive predictions</div>
+      <div class="ci-body">What would you expect to observe if the theory is correct? These become your hypotheses.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Step 3: Test predictions</div>
+      <div class="ci-body">Collect empirical data using falsifiable hypotheses. Verify the results through replication.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">Step 4: Modify the theory</div>
+      <div class="ci-body">Theory is supported, modified, or rejected based on findings — then the loop begins again.</div>
+    </div>
+  </div>
+
+  <h3>The scientist-practitioner model</h3>
+  <p>This is the most important concept in the entire unit. The model holds that <strong>science and practice are in a reciprocal relationship</strong>:</p>
+  <ul>
+    <li><strong>Science informs practice</strong> — evidence tells you which interventions work</li>
+    <li><strong>Practice informs science</strong> — what you see in clients generates new research questions</li>
+  </ul>
+  <p>You are not just a consumer of research. You are a participant in the ongoing scientific project of understanding human psychology. This is what "scientist-practitioner" means.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> The scientist-practitioner model almost certainly appears on the exam. Know the definition, know it's reciprocal (bidirectional), and be able to give an example: e.g., a clinician notices that clients with X presentation don't respond well to Y treatment → this observation drives new research → new research produces a better treatment → that treatment improves practice.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 2 Summary</div>
+    <p>Science requires knowledge to be empirical (systematically observed), falsifiable (testable), and verifiable (replicable and publicly scrutinised). Scientific theory is not a guess — it's a provisional, evidence-backed explanation that generates testable predictions.</p>
+    <p>The scientist-practitioner model is the central model of the entire unit: science and practice feed each other in a continuous loop. You must be literate in both.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 3 -->
+<section class="module" id="mod3">
+  <div class="module-header">
+    <div class="module-num">03</div>
+    <div class="module-title-block">
+      <h2>Pseudoscience &amp; Psychomythology</h2>
+      <p class="module-focus">Psychomyths, their sources, heuristics, and how to debunk them.</p>
+    </div>
+  </div>
+
+  <h3>What are psychomyths?</h3>
+  <p>Psychomyths are false beliefs about psychology that are believed by a large proportion of the population. They typically arise from <strong>misinterpretation of research</strong> or <strong>selective attention</strong> — we over-attend to dramatic, unusual information and ignore the mundane evidence that contradicts it.</p>
+
+  <div class="card">
+    <div class="card-title">The "10% of the brain" myth — a worked example</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7">Often attributed to William James (1907), who actually wrote about people being "half awake" to their potential — a comment about attention and engagement, not literal brain capacity. This was misread across decades and became the myth that we only use 10% of our brain. From a research perspective, the claim is also untestable as stated. The correct classification: <strong>false</strong>, not just a myth.</p>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Be able to describe what psychomyths are and why they exist. Know the vaccine-autism example in depth — it's used as the unit's central case study. Know the 9 sources of psychomyths listed below.</p>
+  </div>
+
+  <h3>9 sources of psychomyths</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-red">
+      <div class="ci-title">1. Word of mouth</div>
+      <div class="ci-body">Like the telephone game — meaning shifts and distorts with each retelling.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">2. Selective memory</div>
+      <div class="ci-body">We remember the hits (times something worked) and forget the misses (times it didn't).</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">3. Causation from correlation</div>
+      <div class="ci-body">Two things co-occur and we assume one caused the other.</div>
+    </div>
+    <div class="concept-item ci-purple">
+      <div class="ci-title">4. Post hoc, ergo propter hoc</div>
+      <div class="ci-body">"After this, therefore because of this." A classic logical error — timing doesn't imply causation.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">5. Biased samples</div>
+      <div class="ci-body">Generalising from a non-representative group to everyone.</div>
+    </div>
+    <div class="concept-item ci-gold">
+      <div class="ci-title">6. Reasoning by representativeness</div>
+      <div class="ci-body">Judging likelihood by how much something matches our mental prototype.</div>
+    </div>
+    <div class="concept-item ci-red">
+      <div class="ci-title">7. Media portrayals</div>
+      <div class="ci-body">"Studies show..." used without any actual study. Pop psychology (Dr Phil, A Current Affair) breeds myths through sensationalism.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">8. Partial truth</div>
+      <div class="ci-body">A kernel of real finding, massively overstated or stripped of context.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">9. Terminology</div>
+      <div class="ci-body">Scientific terms get adopted into everyday language with distorted meanings (e.g., "theory" being read as "guess").</div>
+    </div>
+  </div>
+
+  <h3>Heuristics — why smart people believe myths</h3>
+  <p>Heuristics are <strong>mental shortcuts</strong> — fast, efficient rules of thumb that help us make decisions without expending a lot of cognitive effort. They're not pseudoscience; they're real cognitive processes. They evolved because they're often useful. But they lead to <strong>systematic errors and cognitive biases</strong>, which is exactly why psychomyths persist.</p>
+
+  <div class="card">
+    <div class="card-title">Pohl (2004) — three categories</div>
+    <div class="concept-grid" style="margin:0">
+      <div class="concept-item ci-purple" style="margin:0">
+        <div class="ci-title">Thinking heuristics</div>
+        <div class="ci-body">Shortcuts in how we reason and draw conclusions</div>
+      </div>
+      <div class="concept-item ci-green" style="margin:0">
+        <div class="ci-title">Judgement heuristics</div>
+        <div class="ci-body">Shortcuts in how we evaluate and make decisions</div>
+      </div>
+      <div class="concept-item ci-blue" style="margin:0">
+        <div class="ci-title">Memory heuristics</div>
+        <div class="ci-body">Shortcuts in what we recall and how we recall it</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>The specific heuristics — know all of these</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-red">
+      <div class="ci-title">Conjunction fallacy</div>
+      <div class="ci-body">We judge a specific, detailed scenario as more likely than a general one because it "fits" better. Classic example: "Linda is a bank teller AND feminist activist" rated more likely than "Linda is a bank teller" — logically impossible.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Confirmation bias</div>
+      <div class="ci-body">We seek, favour, and remember information that confirms existing beliefs, and ignore contradictory evidence. <em>Clinical example:</em> GP refers client with "anxiety" → practitioner only notices symptoms that confirm anxiety, misses PTSD.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Illusory correlation</div>
+      <div class="ci-body">Seeing a relationship between unrelated things. "Lucky socks" working at footy. <em>Clinical example:</em> Assuming all 14–16 year old females present with eating disorders.</div>
+    </div>
+    <div class="concept-item ci-purple">
+      <div class="ci-title">Fundamental attribution error</div>
+      <div class="ci-body">Over-emphasising personality in explaining behaviour, dismissing situational context. <em>Example:</em> Athlete who misses a goal blames themselves, ignoring the wind, the opposing team, the goalkeeper's skill.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">Self-serving bias</div>
+      <div class="ci-body">Good outcomes = my ability. Bad outcomes = external factors. HD on assignment = "I'm smart." Poor mark = "tutor didn't explain it well."</div>
+    </div>
+    <div class="concept-item ci-gold">
+      <div class="ci-title">Availability / vividness effect</div>
+      <div class="ci-body">If something is easy to recall, we assume it's more common or likely. Vivid, dramatic events are more memorable. Media coverage inflates perceived risk. <em>Example:</em> Overestimating danger of bungee jumping because the accidents are what get reported.</div>
+    </div>
+    <div class="concept-item ci-red">
+      <div class="ci-title">Representativeness heuristic</div>
+      <div class="ci-body">Judging likelihood by how much something matches a mental prototype. <em>Clinical example:</em> If a client "looks like" a perpetrator of family violence (tattoos, imposing), you might unconsciously treat them as guilty — which damages therapeutic rapport.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Forer (Barnum) effect</div>
+      <div class="ci-body">People rate vague, general personality descriptions as highly accurate and uniquely personal to them. Why horoscopes feel so specific. The basis of much pseudoscience and "cold reading."</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Misinformation effect (Loftus &amp; Palmer, 1974)</div>
+      <div class="ci-body">Post-event information contaminates memory. Changing "hit" to "smashed" in a question about a car crash made participants misremember the speed as higher and falsely recall broken glass. Memory is reconstructive, not a recording.</div>
+    </div>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content (high probability):</strong> This module is dense with exam material. You need to:</p>
+    <ul>
+      <li>Define heuristics and Pohl's three categories</li>
+      <li>Name, define, and give examples of all heuristics listed above</li>
+      <li>Apply heuristics to the vaccine-autism myth (e.g. confirmation bias: parents who believe vaccines cause autism only notice evidence supporting this view; availability: one memorable child's story outweighs thousands of data points)</li>
+      <li>Apply heuristics to clinical practice scenarios (confirmation bias and representativeness are flagged as most problematic in practice)</li>
+      <li>Describe the misinformation effect and the Loftus &amp; Palmer study</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 3 Summary</div>
+    <p>Psychomyths are false psychological beliefs held widely. They arise from 9 identifiable sources including media portrayals, word of mouth, and biased reasoning. Heuristics — mental shortcuts — explain why people maintain these beliefs even when presented with contradictory evidence.</p>
+    <p>Key lesson: whether a relationship exists between two things (like vaccines and autism) is <strong>not a matter of opinion — it is a question for science.</strong> And science has answered it clearly. The myth persists not because the evidence is ambiguous, but because of heuristics like confirmation bias and the availability effect.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 4 -->
+<section class="module" id="mod4">
+  <div class="module-header">
+    <div class="module-num">04</div>
+    <div class="module-title-block">
+      <h2>Professional Practice — General Registration</h2>
+      <p class="module-focus">What psychologists actually do. Training requirements. Core competencies. Self-care.</p>
+    </div>
+  </div>
+
+  <h3>Types of registration in Australia</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-green">
+      <div class="ci-title">General registration</div>
+      <div class="ci-body">Full registration. Can practice independently. Clients can access Medicare rebates. This is the license that legitimises your work.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Provisional registration</div>
+      <div class="ci-body">During the supervised training / internship period. You're registered but not yet fully independent.</div>
+    </div>
+    <div class="concept-item ci-gold">
+      <div class="ci-title">Non-practising registration</div>
+      <div class="ci-body">Registered but not currently providing psychological services.</div>
+    </div>
+  </div>
+
+  <h3>Training pathways to general registration</h3>
+  <p>The 4+2 pathway is being phased out. By the time you graduate, there will be two main options:</p>
+  <div class="concept-grid">
+    <div class="concept-item ci-purple">
+      <div class="ci-title">5+1 pathway</div>
+      <div class="ci-body">4 years undergraduate + 1 year honours (or integrated 4+1) = 5 years of study, then 1 year of supervised internship. Internship involves logbooks, case studies, and 300 hours of supervised practice in Semester 2.</div>
+    </div>
+    <div class="concept-item ci-red">
+      <div class="ci-title">Postgraduate Masters pathway</div>
+      <div class="ci-body">4 years undergraduate + postgraduate masters in an area of practice. Required for endorsement areas like Clinical, Forensic, Neuropsychology etc. This is the longer road but leads to specialist endorsement.</div>
+    </div>
+  </div>
+
+  <h3>The 8 core competencies for general registration</h3>
+  <p>Every general psychologist must demonstrate these. Science underlies all of them — even the ones that seem purely interpersonal:</p>
+  <div class="concept-grid">
+    <div class="concept-item ci-blue">
+      <div class="ci-title">1. Knowledge of the discipline</div>
+      <div class="ci-body">Understanding of psychological theory, research, and evidence base.</div>
+    </div>
+    <div class="concept-item ci-red">
+      <div class="ci-title">2. Ethical, legal &amp; professional matters</div>
+      <div class="ci-body">APS Code of Ethics, legal obligations, professional conduct standards.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">3. Psychological assessment &amp; measurement</div>
+      <div class="ci-body">Valid, reliable assessment tools. Understanding psychometrics.</div>
+    </div>
+    <div class="concept-item ci-purple">
+      <div class="ci-title">4. Intervention strategies</div>
+      <div class="ci-body">Evidence-based treatments. You must know <em>why</em> something works — i.e., that a significant body of research supports it.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">5. Research &amp; evaluation</div>
+      <div class="ci-body">Ability to engage with, critically appraise, and apply research.</div>
+    </div>
+    <div class="concept-item ci-gold">
+      <div class="ci-title">6. Communication &amp; interpersonal skills</div>
+      <div class="ci-body">Effective communication with clients, colleagues, and in reports.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">7. Working in cross-cultural context</div>
+      <div class="ci-body">Cultural competence. Awareness of how culture shapes presentation and treatment.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">8. Practice across the lifespan</div>
+      <div class="ci-body">Ability to work with clients at different developmental stages.</div>
+    </div>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know all 8 competencies by name. Be able to explain how science relates to at least one or two of them. The module specifically works through Competency 4 (intervention strategies) as an example: you must use evidence-based/"gold standard" treatments, and you know they're gold standard <em>because research has demonstrated their effectiveness</em>.</p>
+  </div>
+
+  <h3>The psychologist's "promise"</h3>
+  <p>Registration functions like a licence. You cannot practice psychology without it, just as you cannot drive without a driver's licence. This licence represents a <strong>promise to society</strong> — that your level of training, skills, and competency is sufficient to help people in serious distress. The Medicare rebate system is the government formally endorsing this promise.</p>
+  <p>This is also why <strong>knowing the limits of your competence</strong> is so central to ethics. If you're trained in individual therapy and a couple presents, you must be honest that you may not have the skillset for that — rather than proceeding anyway and risking harm.</p>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 4 Summary</div>
+    <p>Psychologists in Australia must be registered with AHPRA. The main training pathway by the time you graduate will be the 5+1 (5 years study + 1 year supervised internship) or a postgraduate masters. General registration requires demonstrating 8 core competencies, all of which are underpinned by scientific literacy.</p>
+    <p>Registration is a promise: that you are equipped to help people who are genuinely suffering. That promise requires you to stay current with research and to know your limits.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 5 -->
+<section class="module" id="mod5">
+  <div class="module-header">
+    <div class="module-num">05</div>
+    <div class="module-title-block">
+      <h2>Endorsement Areas — Part 1</h2>
+      <p class="module-focus">Clinical psychology. Counselling psychology. Neuropsychology.</p>
+    </div>
+  </div>
+
+  <p>There are 9 endorsement areas in psychology in Australia. Modules 5, 6, and 7 cover all of them. Endorsement requires postgraduate training beyond general registration. The key exam skill is knowing <strong>which psychologist is most appropriate</strong> for a given client — not just which one <em>could</em> see them.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Case study questions about endorsement areas are common. The key logic is: multiple psychologists could technically work with a client, but one is <em>most appropriate</em> based on the presenting concern, context, and the specialist's training. Know the distinct focus of each area.</p>
+  </div>
+
+  <div class="endorsement-grid">
+    <div class="endorsement-card">
+      <span class="ec-tag tag-clinical">Clinical</span>
+      <h4>Clinical Psychologist</h4>
+      <p>Assesses and treats <strong>diagnosable</strong> mental illnesses — schizophrenia, severe depression, complex PTSD, eating disorders. Has specialised training for diagnosis, not just treatment. Uses CBT, DBT, schema therapy, exposure therapy etc. Key distinction: generally registered psychologists can treat but not diagnose.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-counselling">Counselling</span>
+      <h4>Counselling Psychologist</h4>
+      <p>Specialises in interpersonal, relational, and emotional concerns — communication breakdowns, relationship issues, life transitions, grief. Person-centred approach. Less focused on diagnosable illness; more on wellbeing, adjustment, and quality of life.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-neuro">Neuropsychology</span>
+      <h4>Neuropsychologist</h4>
+      <p>Brain–behaviour relationships. Cognitive assessment after brain injury, stroke, dementia, or developmental conditions. Highly technical — requires specific training in neuropsychological testing and brain function. Most commonly works in hospital or rehabilitation settings.</p>
+    </div>
+  </div>
+
+  <h3>Case study logic — worked example</h3>
+  <div class="card">
+    <div class="card-title">Case: Young person presenting with psychotic symptoms</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin-bottom:10px">A generally registered psychologist <em>could</em> see this person and provide support. An Ed &amp; Dev psychologist <em>could</em> also be relevant given the client's age. A health psychologist <em>could</em> address wellbeing components. But <strong>a clinical psychologist is most appropriate</strong> because: (a) the symptoms are clinically significant indicators of a diagnosable mental illness, and (b) clinical psychologists have specialised training in assessing and treating diagnosable disorders. Diagnosis and targeted treatment come first.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 5 Summary</div>
+    <p>Clinical psychologists are the go-to for diagnosable mental illness. Counselling psychologists specialise in relational and interpersonal wellbeing. Neuropsychologists work with brain–behaviour relationships. When multiple types of psychologist could work with a client, the most appropriate is determined by the primary presenting concern and the specialist's core training.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 6 -->
+<section class="module" id="mod6">
+  <div class="module-header">
+    <div class="module-num">06</div>
+    <div class="module-title-block">
+      <h2>Endorsement Areas — Part 2</h2>
+      <p class="module-focus">Organisational psychology. Community psychology. Forensic psychology.</p>
+    </div>
+  </div>
+
+  <div class="endorsement-grid">
+    <div class="endorsement-card">
+      <span class="ec-tag tag-forensic">Forensic</span>
+      <h4>Forensic Psychologist</h4>
+      <p>Works at the intersection of psychology and the legal/criminal justice system. Risk assessments of offenders, expert witness testimony, working with perpetrators and victims in criminal, civil, and family law contexts. Key skills: legal knowledge, court report writing, risk assessment tools.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-org">Organisational</span>
+      <h4>Organisational Psychologist</h4>
+      <p>Applies psychology to workplaces — leadership development, team dynamics, organisational culture, selection and recruitment, management training. Works at both individual and system levels. Relevant when the primary concern is work performance, culture, or leadership.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-community">Community</span>
+      <h4>Community Psychologist</h4>
+      <p>Systemic and social justice focus. Works with communities, organisations, and policy — not primarily with individuals. Concerned with empowerment, human rights, social determinants of health, and structural change. Think NGO leader or policy advisor, not private practice.</p>
+    </div>
+  </div>
+
+  <h3>Case study logic — Module 6 worked examples</h3>
+  <div class="card">
+    <div class="card-title">Forensic example</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7">A client involved in family court proceedings needs a psychological assessment and may need someone to provide expert witness testimony. A general psychologist could provide general support. But the <strong>forensic psychologist</strong> is most appropriate because they have specialist training in court contexts, legal processes, risk assessment, and writing reports for legal purposes.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Counselling vs Organisational</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7">A man presents because poor communication with his partner is affecting his mood at work. His primary concern is the relationship. A <strong>counselling psychologist</strong> is most appropriate — relational and interpersonal concerns are their core specialty. If instead the concern was about managing a team or leadership effectiveness at a systemic level, an <strong>organisational psychologist</strong> would be more appropriate.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 6 Summary</div>
+    <p>Forensic psychologists work at the legal system interface. Organisational psychologists work with workplace systems and individuals within them. Community psychologists work at the societal and systemic level. The key differentiator for community psychology is the shift away from the individual toward the system and society.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 7 -->
+<section class="module" id="mod7">
+  <div class="module-header">
+    <div class="module-num">07</div>
+    <div class="module-title-block">
+      <h2>Endorsement Areas — Part 3</h2>
+      <p class="module-focus">Educational &amp; Developmental psychology. Sport &amp; Exercise psychology. Health psychology.</p>
+    </div>
+  </div>
+
+  <div class="endorsement-grid">
+    <div class="endorsement-card">
+      <span class="ec-tag tag-edd">Ed &amp; Dev</span>
+      <h4>Educational &amp; Developmental Psychologist</h4>
+      <p>Works with children, adolescents, and families around learning, developmental challenges, and adjustment. ASD, ADHD, giftedness, school-related distress, parent–child relationships. Strong lifespan focus with emphasis on youth. Key settings: schools, early intervention, private practice.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-sport">Sport &amp; Exercise</span>
+      <h4>Sport &amp; Exercise Psychologist</h4>
+      <p>Performance psychology with athletes. Performance anxiety, mental preparation, team cohesion, transition out of sport. Key distinguishing factor: the psychological concerns exist <em>in the context of sport</em>. If anxiety is the issue but sport is the context, sport psych trumps clinical psych.</p>
+    </div>
+    <div class="endorsement-card">
+      <span class="ec-tag tag-health">Health</span>
+      <h4>Health Psychologist</h4>
+      <p>Psychological factors in physical health — chronic pain, addiction, sleep problems, eating issues, anxiety contributing to physical illness. Also works at population level: identifying health behaviours, modifiable risk factors, and disease distribution. Bridge between psychology and medicine.</p>
+    </div>
+  </div>
+
+  <h3>The "most appropriate" decision — full case study logic</h3>
+  <div class="card">
+    <div class="card-title">Case: Athlete with anxiety about performance</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7">A clinical psychologist <em>could</em> treat anxiety (it's a diagnosable condition). An Ed &amp; Dev psychologist might be relevant given the client's age. A counselling psychologist could support general wellbeing. But <strong>sport &amp; exercise psychologist</strong> is most appropriate because the anxiety exists specifically in the context of sporting performance — which is their core specialty.</p>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Across Modules 5–7 you need to know all 9 endorsement areas. The exam likely presents a case study and asks you to identify the most appropriate type of psychologist with a rationale. Remember: "most appropriate" ≠ "only one who could see them." Look at the primary presenting concern and match it to who specialises in exactly that.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Modules 5–7 Summary — All 9 endorsement areas</div>
+    <p><strong>Clinical:</strong> diagnosable mental illness. <strong>Counselling:</strong> relational &amp; interpersonal. <strong>Neuropsychology:</strong> brain–behaviour. <strong>Forensic:</strong> legal system. <strong>Organisational:</strong> workplace &amp; systems. <strong>Community:</strong> societal &amp; structural. <strong>Ed &amp; Dev:</strong> child/adolescent development &amp; learning. <strong>Sport &amp; Exercise:</strong> performance in sporting context. <strong>Health:</strong> psychology–physical health interface.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 8 -->
+<section class="module" id="mod8">
+  <div class="module-header">
+    <div class="module-num">08</div>
+    <div class="module-title-block">
+      <h2>Alternative Careers — Research</h2>
+      <p class="module-focus">Research career pathways. Roles for psychology graduates outside registration.</p>
+    </div>
+  </div>
+
+  <h3>Not everyone becomes a registered psychologist</h3>
+  <p>A Bachelor of Psychology opens doors beyond clinical practice. Two main alternative tracks:</p>
+
+  <div class="concept-grid">
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Research careers</div>
+      <div class="ci-body">Research assistant → PhD candidate → postdoctoral researcher → academic/senior researcher. Honours (4th year) is the gateway. Roles include running participants, data analysis, writing, grant applications, and eventually leading your own research program.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Non-psychology roles</div>
+      <div class="ci-body">HR management, policy, social work, education, health administration. Psychology skills (research literacy, communication, understanding human behaviour, data analysis) transfer broadly. The unit uses an HR Manager job ad to show how psych competencies map onto non-psych roles.</div>
+    </div>
+  </div>
+
+  <h3>The research career pathway</h3>
+  <p>Research career stages typically move from: <strong>Research Assistant (RA)</strong> → <strong>Honours</strong> → <strong>PhD candidate</strong> → <strong>Postdoctoral researcher</strong> → <strong>Research Fellow / Associate Professor / Professor</strong>. Each stage requires the previous one. The PhD is where you develop specialist expertise and make an original contribution to knowledge.</p>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 8 Summary</div>
+    <p>Psychology graduates aren't limited to registration. Research careers build directly on the scientific skills developed in your degree. Non-psych careers in HR, policy, education, and health also benefit from psychology's core skills — research literacy, understanding behaviour, communication, and evidence-based decision-making.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 10 -->
+<section class="module" id="mod10">
+  <div class="module-header">
+    <div class="module-num">10</div>
+    <div class="module-title-block">
+      <h2>Ethics in Psychological Practice &amp; Research</h2>
+      <p class="module-focus">Professional ethics. APS Code. Research ethics. The Nuremberg Code. Five principles. Informed consent.</p>
+    </div>
+  </div>
+
+  <h3>Why ethics in research? — the historical reason</h3>
+  <p>Research ethics became formalised after catastrophic abuses of power in the name of science. Two key examples you need to know:</p>
+  <div class="concept-grid">
+    <div class="concept-item ci-red">
+      <div class="ci-title">Nazi experiments (WWII)</div>
+      <div class="ci-body">Dr Josef Mengele conducted "experiments" on concentration camp prisoners without consent, causing severe harm and death. This directly led to the Nuremberg Code — the first international standard for ethical research.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">Tuskegee Syphilis Study</div>
+      <div class="ci-body">600 poor African-American men were injected with syphilis and studied for 40 years without being told what they had, without receiving treatment (even after penicillin became available), and without true consent. Many died; partners and children were infected.</div>
+    </div>
+  </div>
+
+  <p>These examples show <em>why</em> ethical standards in research are not bureaucratic box-ticking — they exist because, historically, without them, researchers harmed people catastrophically.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know both historical examples and what they led to (Nuremberg Code, HRECs, NHMRC guidelines). Be able to explain why each example violated specific ethical principles (Tuskegee violated autonomy, non-maleficence, beneficence, and justice simultaneously).</p>
+  </div>
+
+  <h3>Two types of ethics in professional practice</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-purple">
+      <div class="ci-title">Virtue ethics</div>
+      <div class="ci-body">Concerned with the moral character of the practitioner — being honest, courageous, honourable. Gives guidance on how to live and practice, but doesn't provide specific rules for resolving dilemmas. When the code runs out, virtue ethics kicks in.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Principle-based ethics (APS Code)</div>
+      <div class="ci-body">Clear rules, specific duties, and codes of behaviour. Provides certainty. But can't cover every situation — especially novel ones like social media, AI, or unexpected scenarios (e.g., matching with a client on Tinder).</div>
+    </div>
+  </div>
+
+  <h3>The 5 basic principles of research ethics</h3>
+  <div class="ethics-grid">
+    <div class="ethics-item">
+      <div class="ei-icon">🔓</div>
+      <h4>Autonomy</h4>
+      <p>Participants have the right to make informed, voluntary decisions. Operationalised through informed consent — participants must clearly understand what they're agreeing to, the risks, benefits, and their right to withdraw.</p>
+    </div>
+    <div class="ethics-item">
+      <div class="ei-icon">🛡️</div>
+      <h4>Non-maleficence</h4>
+      <p>Do no harm. Research must not damage participants. Risks must be minimised and justified by the potential benefits. The first obligation: don't make things worse.</p>
+    </div>
+    <div class="ethics-item">
+      <div class="ei-icon">✅</div>
+      <h4>Beneficence</h4>
+      <p>Research should produce meaningful benefit — for participants, for the field, or for society. Not just "interesting" — actually worthwhile given the risks and resources involved.</p>
+    </div>
+    <div class="ethics-item">
+      <div class="ei-icon">⚖️</div>
+      <h4>Justice</h4>
+      <p>Fairness in who bears the risks and who benefits. Tuskegee was a justice violation — a vulnerable population bore all the risk; the benefits went elsewhere. Research burdens and benefits should be distributed equitably.</p>
+    </div>
+    <div class="ethics-item">
+      <div class="ei-icon">🔬</div>
+      <h4>Fidelity &amp; Scientific Integrity</h4>
+      <p>Research must be conducted honestly and reported accurately. Violations: falsifying data (Cyril Burt), selective reporting (only publishing positive findings — publication bias), plagiarism, drawing conclusions the data don't support.</p>
+    </div>
+  </div>
+
+  <div class="exam-callout">
+    <p><strong>Exam content (very high probability):</strong> Know all 5 principles by name and definition. Be able to explain how the Tuskegee study violated multiple principles simultaneously. Be able to explain the difference between virtue ethics and principle-based ethics and when each applies.</p>
+  </div>
+
+  <h3>Professional integrity in practice — the key rules</h3>
+  <ul>
+    <li>Most ethical problems arise from <strong>momentary lapses in judgement</strong> — "most of the time" isn't good enough</li>
+    <li>Know the limits of your competence — if you're not trained to do something, say so</li>
+    <li>Psychologists occupy a privileged, powerful position — clients share things they share with no one else. That power dynamic demands extra vigilance</li>
+    <li>The APS Code is a guide, not a complete rule book — novel situations require judgement</li>
+  </ul>
+
+  <div class="card">
+    <div class="card-title">The two case studies — know both</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin-bottom:8px"><strong>Practitioner A:</strong> Was "learning as she went" on assessments she wasn't trained in. Clients were getting misdiagnoses. Verdict: unprofessional. You cannot practice outside your competence. You must seek training first.</p>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7"><strong>Practitioner B:</strong> Chronically late for sessions, dismissed a single mother's complaint about waiting with "you don't have a job, what difference does it make?" Verdict: unprofessional. Shows complete disrespect for the client and her circumstances.</p>
+  </div>
+
+  <h3>Limits of the APS Code of Ethics</h3>
+  <p>The code cannot cover every situation. Examples of where it runs out:</p>
+  <ul>
+    <li>The Mental Health Act — what do you do when a client refuses treatment but their life is at risk? (MHA can force treatment as a last resort, e.g., nasogastric feeding in severe anorexia)</li>
+    <li>New cultural phenomena — social media, Tinder, AI — the code may not yet address these</li>
+    <li>Vagueness across diverse practice areas — a code that covers private practice AND forensic work AND research will sometimes be imprecisely worded</li>
+  </ul>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 10 Summary</div>
+    <p>Ethics in both practice and research are grounded in the same core principles: autonomy, non-maleficence, beneficence, justice, and scientific integrity. Research ethics emerged specifically because, without formal constraints, researchers historically caused serious harm.</p>
+    <p>In practice, ethics means knowing your limits, acting in the client's best interest, and maintaining integrity even when the APS Code doesn't provide a clear answer. Most ethical failures are lapses, not malice — which is why constant vigilance matters.</p>
+  </div>
+</section>
+
+<!-- ============================================================ MODULE 11 -->
+<section class="module" id="mod11">
+  <div class="module-header">
+    <div class="module-num">11</div>
+    <div class="module-title-block">
+      <h2>Working with Diverse Populations — Psychology &amp; Culture</h2>
+      <p class="module-focus">Culture. Enculturation. Cross-cultural psychology. Acculturation. Multiculturalism.</p>
+    </div>
+  </div>
+
+  <h3>What is culture — and what it isn't</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-green">
+      <div class="ci-title">Overt culture</div>
+      <div class="ci-body">Readily observable and concrete — language, dress, food, customs, rituals, observable behaviour.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Covert culture</div>
+      <div class="ci-body">Inferred, invisible — values, beliefs, worldviews, assumptions about how the world works. The deeper layer, and often more influential.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Culture ≠ nationality, race, or ethnicity</div>
+    <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7">Nationality is a political construct. Race refers to physical make-up. Ethnicity refers to origins. Culture is related to all three but is distinct — it's the meanings, practices, and values that give structure to experience within a group. These distinctions matter in psychological practice because conflating them leads to stereotyping and misattribution.</p>
+  </div>
+
+  <h3>Enculturation</h3>
+  <p>The process through which we absorb our culture — learning its norms, values, and behaviours, usually <strong>unconsciously</strong>, through family, school, peers, media, and social institutions. You don't choose your enculturation — it shapes you before you're aware of it. This has direct implications for how clients understand their own experience and what "help" means to them.</p>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know the definition of enculturation and what factors contribute to it. Know the three theoretical frameworks below (absolutism, relativism, universalism) and be able to differentiate them. Know the emic vs etic distinction.</p>
+  </div>
+
+  <h3>Three frameworks for cross-cultural psychology</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-red">
+      <div class="ci-title">Absolutism</div>
+      <div class="ci-body">Psychological phenomena are the same across all cultures — culture is background noise. Universal principles apply everywhere. Criticism: ignores real and meaningful cultural differences in how phenomena are experienced and expressed.</div>
+    </div>
+    <div class="concept-item ci-green">
+      <div class="ci-title">Relativism</div>
+      <div class="ci-body">Behaviour can only be understood within its specific cultural context. No universal principles — everything must be studied from within. Criticism: makes meaningful cross-cultural comparison impossible and risks implying cultures can't be evaluated.</div>
+    </div>
+    <div class="concept-item ci-blue">
+      <div class="ci-title">Universalism (the middle ground)</div>
+      <div class="ci-body">Some psychological processes are universal (e.g., attachment, emotion), but culture shapes how they are expressed, experienced, and interpreted. Most researchers sit here. The approach that best informs ethical, culturally sensitive practice.</div>
+    </div>
+  </div>
+
+  <h3>Emic vs etic approaches</h3>
+  <div class="concept-grid">
+    <div class="concept-item ci-purple">
+      <div class="ci-title">Emic approach</div>
+      <div class="ci-body">Study behaviour from the inside — as a member or near-member of the culture. Deep cultural understanding. The "native" perspective. Risk: less generalisable; hard to compare across cultures.</div>
+    </div>
+    <div class="concept-item ci-orange">
+      <div class="ci-title">Etic approach</div>
+      <div class="ci-body">Study behaviour from the outside — as an external observer. Allows cross-cultural comparison. Risk: may impose researcher's own cultural assumptions and miss culturally specific meanings.</div>
+    </div>
+  </div>
+
+  <h3>Acculturation — Berry's 4-fold model</h3>
+  <p>Acculturation describes what happens when a person from one culture lives within another. Berry's model identifies four strategies based on two questions: (1) Do you maintain your original culture? (2) Do you engage with the new culture?</p>
+
+  <div class="berry-grid">
+    <div class="berry-item">
+      <h4>✅ Integration</h4>
+      <p>Maintain original culture AND engage with new one. Generally associated with the best outcomes — sense of identity, belonging, and flexibility.</p>
+    </div>
+    <div class="berry-item">
+      <h4>➡️ Assimilation</h4>
+      <p>Give up original culture, adopt the new one fully. Can work but involves loss of original identity and community.</p>
+    </div>
+    <div class="berry-item">
+      <h4>⬅️ Separation</h4>
+      <p>Maintain original culture, reject or avoid the new one. May preserve identity but limits engagement with broader society.</p>
+    </div>
+    <div class="berry-item">
+      <h4>❌ Marginalisation</h4>
+      <p>Neither maintain original culture nor engage with the new one. Most difficult outcome — associated with isolation, poor mental health outcomes, and loss of community.</p>
+    </div>
+  </div>
+
+  <h3>Implications for psychological practice</h3>
+  <p>Much of the existing psychological research and many assessment tools (personality tests, standardised measures) were developed in Western cultural contexts. Applying these uncritically to non-Western populations raises significant concerns about <strong>validity and cultural bias</strong>. As a practitioner, you must be aware of:</p>
+  <ul>
+    <li>The cultural assumptions built into your assessment tools</li>
+    <li>The cultural context shaping how your client understands their own experience</li>
+    <li>Whether your intervention approach is appropriate and accessible to someone from a different cultural background</li>
+    <li>The 10-step model for engagement with Indigenous communities — which prioritises relationship, trust, and community consultation before any psychological work begins</li>
+  </ul>
+
+  <div class="exam-callout">
+    <p><strong>Exam content:</strong> Know the definitions of culture (overt vs covert), enculturation, the three cross-cultural frameworks, the emic/etic distinction, and Berry's four acculturation strategies. Be able to explain why Western-developed psychological tools may not be valid across cultures.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-label">Module 11 Summary</div>
+    <p>Culture shapes how people experience, express, and make meaning of psychological phenomena. As a practitioner, cultural competence isn't optional — it's Competency 7 for general registration. You need to understand how culture differs from race, nationality, and ethnicity; how enculturation works; and how acculturation affects the clients you'll work with.</p>
+    <p>Universalism is the most defensible framework for cross-cultural research — acknowledging both human commonalities and real cultural variation. When working across cultures, be aware of whether your tools and approaches were designed for the population you're using them with.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Science &amp; Professional Practice in Psychology &mdash; Study Guide &mdash; Good luck on the exam.</p>
+</footer>
+
+</body>
+</html>
